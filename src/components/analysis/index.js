@@ -124,9 +124,13 @@ class Analysis extends Component {
                                     return (
                                         <div key={app.id} className='table-row not-bordered-right'>
                                             <p>{app.applicationName}</p>
-                                            <li className={`${!app.detected ? 'fa fa-check-circle-o' : ''}`}></li>
+                                            <li
+                                                className={`${
+                                                    !app.detected ? 'fa fa-check-circle-o' : 'fa fa-times-circle-o'
+                                                }`}
+                                            ></li>
                                             <label style={{ paddingLeft: '8px' }}>
-                                                {app.detected === false ? 'Undetected' : ''}
+                                                {app.detected === false ? 'Undetected' : 'Detected'}
                                             </label>
                                         </div>
                                     );
@@ -137,9 +141,13 @@ class Analysis extends Component {
                                     return (
                                         <div key={app.id} className='table-row not-bordered-left'>
                                             <p>{app.applicationName}</p>
-                                            <li className={`${!app.detected ? 'fa fa-check-circle-o' : ''}`}></li>
+                                            <li
+                                                className={`${
+                                                    !app.detected ? 'fa fa-check-circle-o' : 'fa fa-times-circle-o'
+                                                }`}
+                                            ></li>
                                             <label style={{ paddingLeft: '8px' }}>
-                                                {app.detected === false ? 'Undetected' : ''}
+                                                {app.detected === false ? 'Undetected' : 'Detected'}
                                             </label>
                                         </div>
                                     );
@@ -153,9 +161,13 @@ class Analysis extends Component {
                                     return (
                                         <div key={app.id} className='table-row'>
                                             <p>{app.applicationName}</p>
-                                            <li className={`${!app.detected ? 'fa fa-check-circle-o' : ''}`}></li>
+                                            <li
+                                                className={`${
+                                                    !app.detected ? 'fa fa-check-circle-o' : 'fa fa-times-circle-o'
+                                                }`}
+                                            ></li>
                                             <label style={{ paddingLeft: '8px' }}>
-                                                {app.detected === false ? 'Undetected' : ''}
+                                                {app.detected === false ? 'Undetected' : 'Detected'}
                                             </label>
                                         </div>
                                     );
