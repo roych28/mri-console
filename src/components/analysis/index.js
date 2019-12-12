@@ -9,56 +9,107 @@ class Analysis extends Component {
         this.state = {
             threats: 0,
             totalAmmount: this.props.applications.length,
-            scanned: 0,
+            // scanned: 0,
             scanning: true,
             firstAppsArr: [],
             secondAppsArr: []
         };
 
-        this.scanThreats = this.scanThreats.bind(this);
+        // this.scanThreats = this.scanThreats.bind(this);
         this.randomizeIsDetected = this.randomizeIsDetected.bind(this);
-        this.seperateAppsArray = this.seperateAppsArray.bind(this);
+        this.loadApps = this.loadApps.bind(this);
+        this.getAppClassNameAndLabel = this.getAppClassNameAndLabel.bind(this);
     }
 
     componentDidMount() {
         console.log('Analysis DidMount, Applications:', this.props.applications);
-        this.scanThreats();
+        // this.scanThreats();
         this.props.applications.sort((a, b) => a.applicationName.localeCompare(b.applicationName));
         this.props.applications.forEach(app => this.randomizeIsDetected(app));
-        this.seperateAppsArray();
+        this.loadApps();
     }
 
-    seperateAppsArray() {
-        const firstAppsArr = this.props.applications.slice(0, this.props.applications.length / 2 + 1);
-        const secondAppsArr = this.props.applications.slice(
-            this.props.applications.length / 2 + 1,
-            this.props.applications.length
-        );
-        this.setState({ firstAppsArr, secondAppsArr });
-    }
-
-    scanThreats() {
-        const { totalAmmount } = this.state;
-
+    loadApps() {
+        let counter = 0;
+        const { applications } = this.props;
         const interval = setInterval(() => {
-            const { scanned } = this.state;
-            this.setState({ scanned: scanned + 1 });
-            if (scanned === totalAmmount) {
-                this.setState({ scanning: false });
+            if (counter < applications.length / 2) {
+                this.setState({ firstAppsArr: [...this.state.firstAppsArr, applications[counter]] });
+            } else if (counter < applications.length) {
+                this.setState({ secondAppsArr: [...this.state.secondAppsArr, applications[counter]] });
+            } else {
                 clearInterval(interval);
+                this.setState({ scanning: false });
             }
-        }, 150);
+            counter++;
+        }, 800);
+        // interval();
+
+        // const firstAppsArr = this.props.applications.slice(0, this.props.applications.length / 2 + 1);
+        // const secondAppsArr = this.props.applications.slice(
+        //     this.props.applications.length / 2 + 1,
+        //     this.props.applications.length
+        // );
     }
+
+    // scanThreats() {
+    //     const { totalAmmount } = this.state;
+
+    //     const interval = setInterval(() => {
+    //         const { scanned } = this.state;
+    //         this.setState({ scanned: scanned + 1 });
+    //         if (scanned === totalAmmount) {
+    //             this.setState({ scanning: false });
+    //             clearInterval(interval);
+    //         }
+    //     }, 1500);
+    // }
 
     randomizeIsDetected(app) {
         app.detected = Math.random() * 100 < 90 ? false : true;
         return app.detected;
     }
 
+    getAppClassNameAndLabel(app, type) {
+        const { applications } = this.props;
+        const { firstAppsArr } = this.state;
+        if (type === 'class') {
+            if (
+                applications.length % 2 === 1 &&
+                firstAppsArr.indexOf(app) === firstAppsArr.length - 1 &&
+                firstAppsArr.indexOf(app) !== Math.floor(applications.length / 2)
+            )
+                return 'fa fa-hourglass-start';
+            else if (
+                applications.length % 2 === 0 &&
+                firstAppsArr.indexOf(app) === firstAppsArr.length - 1 &&
+                firstAppsArr.indexOf(app) !== Math.floor(applications.length / 2 - 1)
+            )
+                return 'fa fa-hourglass-start';
+            else if (!app.detected) return 'fa fa-check-circle-o';
+            else return 'fa fa-times-circle-o';
+        } else {
+            if (
+                applications.length % 2 === 1 &&
+                firstAppsArr.indexOf(app) === firstAppsArr.length - 1 &&
+                firstAppsArr.indexOf(app) !== Math.floor(applications.length / 2)
+            )
+                return 'Calculating..';
+            else if (
+                applications.length % 2 === 0 &&
+                firstAppsArr.indexOf(app) === firstAppsArr.length - 1 &&
+                firstAppsArr.indexOf(app) !== Math.floor(applications.length / 2 - 1)
+            )
+                return 'Calculating..';
+            else if (!app.detected) return 'Undetected';
+            else return 'Detected';
+        }
+    }
+
     render() {
         const { threats, totalAmmount, scanning, firstAppsArr, secondAppsArr } = this.state;
         const { applications } = this.props;
-
+        console.log(applications.length / 2);
         return (
             <div className='analysis-body'>
                 <div className='top-container'>
@@ -124,13 +175,9 @@ class Analysis extends Component {
                                     return (
                                         <div key={app.id} className='table-row not-bordered-right'>
                                             <p>{app.applicationName}</p>
-                                            <li
-                                                className={`${
-                                                    !app.detected ? 'fa fa-check-circle-o' : 'fa fa-times-circle-o'
-                                                }`}
-                                            ></li>
+                                            <li className={this.getAppClassNameAndLabel(app, 'class')}></li>
                                             <label style={{ paddingLeft: '8px' }}>
-                                                {app.detected === false ? 'Undetected' : 'Detected'}
+                                                {this.getAppClassNameAndLabel(app, 'label')}
                                             </label>
                                         </div>
                                     );
@@ -143,11 +190,21 @@ class Analysis extends Component {
                                             <p>{app.applicationName}</p>
                                             <li
                                                 className={`${
-                                                    !app.detected ? 'fa fa-check-circle-o' : 'fa fa-times-circle-o'
+                                                    secondAppsArr.indexOf(app) === secondAppsArr.length - 1 &&
+                                                    applications.indexOf(app) !== applications.length - 1
+                                                        ? 'fa fa-hourglass-start'
+                                                        : !app.detected
+                                                        ? 'fa fa-check-circle-o'
+                                                        : 'fa fa-times-circle-o'
                                                 }`}
                                             ></li>
                                             <label style={{ paddingLeft: '8px' }}>
-                                                {app.detected === false ? 'Undetected' : 'Detected'}
+                                                {secondAppsArr.indexOf(app) === secondAppsArr.length - 1 &&
+                                                applications.indexOf(app) !== applications.length - 1
+                                                    ? 'Calculating..'
+                                                    : app.detected === false
+                                                    ? 'Undetected'
+                                                    : 'Detected'}
                                             </label>
                                         </div>
                                     );
