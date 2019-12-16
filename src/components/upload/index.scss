@@ -3,6 +3,7 @@
     flex: 1;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
     .tabs {
         display: flex;
@@ -13,7 +14,7 @@
         background-color: #f9f9f9;
         padding: 0 15px;
         cursor: pointer;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
 
         & > .tab {
             display: flex;
@@ -37,39 +38,60 @@
         }
     }
 
-    & > .img {
-        color: #3a4eff;
-        margin-bottom: 14px;
-    }
+    & > .upload-container-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-    & > .upload-btn {
-        border: 1px solid #3a4eff;
-        width: 160px;
-        border-radius: 8px;
-        padding: 10px 12px;
-        font-size: 14px;
-        opacity: 1;
-        font-weight: bold;
-        color: #3a4eff;
-        cursor: pointer;
+        & > .body-tab-1 {
+            & > .img {
+                color: #3a4eff;
+                margin-bottom: 20px;
+            }
 
-        &.filled {
-            color: white;
-            background-color: #3a4eff;
+            & > .upload-btn {
+                border: 1px solid #3a4eff;
+                width: 160px;
+                border-radius: 8px;
+                padding: 10px 12px;
+                font-size: 14px;
+                opacity: 1;
+                font-weight: bold;
+                color: #3a4eff;
+                cursor: pointer;
 
-            &:hover {
-                color: white;
+                &.filled {
+                    color: white;
+                    background-color: #3a4eff;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+
+                &:hover {
+                    color: #0d24f3;
+                }
             }
         }
 
-        &:hover {
-            color: #0d24f3;
-        }
-    }
+        & > .body-tab-2 {
+            display: flex;
+            justify-content: center;
 
-    & > .footer {
-        font-size: 10px;
-        width: 75%;
-        opacity: 0.7;
+            p {
+                max-height: 220px;
+                width: 80%;
+                font-size: 13px;
+                overflow-y: auto;
+            }
+        }
+
+        & > .footer {
+            font-size: 10px;
+            width: 65%;
+            opacity: 0.7;
+            margin-top: 30px;
+        }
     }
 }

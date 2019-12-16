@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import './index.scss';
+
 import Upload from '../upload';
+import './index.scss';
+import MyDropzone from '../utils/dropzone';
 
 class Home extends Component {
     render() {

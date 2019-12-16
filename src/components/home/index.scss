@@ -1,7 +1,7 @@
 .home {
     text-align: center;
     background-color: white;
-    min-height: 100vh;
+    // min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +11,7 @@
     & > .title-container {
         display: flex;
         flex-direction: column;
-        margin-bottom: 50px;
+        margin: 30px 0;
         max-width: 410px;
 
         & .title-with-img {
@@ -32,7 +32,7 @@
         }
 
         & > .description {
-            margin-top: 30px;
+            margin-top: 20px;
             font-size: 13px;
             color: #333;
             line-height: 1.8em;
@@ -41,8 +41,9 @@
 }
 
 .card {
+    height: 430px;
     background-color: #fdfdfd;
-    width: 50%;
+    width: 70%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
