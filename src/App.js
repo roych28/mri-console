@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import store from './store';
 import Home from './components/home';
 import Analysis from './components/analysis';
+import DoctorsPage from './components/doctors-page';
 
 import './App.scss';
 
@@ -11,9 +12,10 @@ function App() {
     return (
         <Provider store={store}>
             <Router>
-                <div className='App'>
+                <div className='app-router'>
                     <Route path='/' exact component={Home} />
                     <Route path='/analysis' exact component={Analysis} />
+                    <Route path='/doctors' exact component={DoctorsPage} />
                 </div>
             </Router>
         </Provider>

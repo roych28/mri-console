@@ -129,6 +129,23 @@
                     font-weight: 600;
                     font-size: 13px;
                 }
+
+                & > .second-opinion-redirect {
+                    cursor: pointer;
+                    position: absolute;
+                    right: 120px;
+                    border-radius: 20px;
+                    height: 26px;
+                    box-shadow: 0px 0px 1px rgb(172, 172, 172);
+                    font-size: 14px;
+                    width: 140px;
+
+                    &:hover {
+                        background-color: #727272;
+                        color: white;
+                        font-weight: bold;
+                    }
+                }
             }
 
             & > .desc-body {

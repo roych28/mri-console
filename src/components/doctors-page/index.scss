@@ -1,0 +1,11 @@
+@import 'theme/colors.scss';
+
+#page-doctors {
+    #page-doctors-body {
+        background: url('../../assets/backgrounds/dark-blue-bg.jpg');
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        height: 100%;
+    }
+}

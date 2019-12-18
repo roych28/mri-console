@@ -108,7 +108,7 @@ class Analysis extends Component {
 
     render() {
         const { threats, totalAmmount, scanning, firstAppsArr, secondAppsArr } = this.state;
-        const { applications } = this.props;
+        const { applications,history } = this.props;
         console.log(applications.length / 2);
         return (
             <div className='analysis-body'>
@@ -142,6 +142,9 @@ class Analysis extends Component {
                         <div className='desc-header'>
                             <li className='fa fa-check-circle-o' />
                             <label>No engines detected this file</label>
+                            <button className='second-opinion-redirect' onClick={() => {
+                                history.push('/doctors');
+                            }}>Second Opinion</button>
                         </div>
                         <div className='desc-body'>
                             <div className='names'>

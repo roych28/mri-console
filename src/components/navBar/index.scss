@@ -1,0 +1,92 @@
+@import 'theme/colors.scss';
+
+$padding-item: 14px 24px 15px 24px;
+$color: white;
+$transition-duration: 200ms;
+$transition-duration-quick: 50ms;
+
+header {
+    min-width: 750px;
+    height: 50px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: stretch;
+    transition-property: background-color, box-shadow;
+    transition-delay: 0ms, 0ms;
+    transition-duration: $transition-duration, $transition-duration;
+    transition-timing-function: ease-in, ease-in;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(87, 137, 160, 0.45);
+    box-shadow: 0 1px 1px 0 $black-20;
+    align-items: center;
+
+    a {
+        height: 100%;
+    }
+
+    nav.title {
+        a {
+            display: block;
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 20px;
+            color: rgb(253, 253, 253);
+            padding: $padding-item;
+        }
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        flex-direction: row;
+
+        &.breadcrumb {
+            flex: 1;
+            width: 128px;
+        }
+    }
+
+    a {
+        transition-property: color, background-color;
+        transition-delay: 0ms, 0ms;
+        transition-duration: $transition-duration, $transition-duration-quick;
+        transition-timing-function: ease-in, ease-in;
+        padding: $padding-item;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.85);
+        cursor: pointer;
+        border: 1px solid transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-weight: 500;
+
+        .name {
+            min-width: 100px;
+            max-width: 185px;
+            height: 16px;
+            font-size: 16px;
+            padding: 2px;
+            padding-right: 30px;
+            // border-left: 1px solid rgba(254, 254, 254, 0.25);
+        }
+        .sprite {
+            font-size: 6px;
+            margin-right: 8px;
+        }
+
+        &.selected {
+            font-weight: bold;
+            background-color: $nice-blue-80;
+        }
+
+        &:hover {
+            background-color: $nice-blue-80;
+        }
+    }
+}

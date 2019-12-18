@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Alfonzo Marcil",
+        "academicRanking": "Professor, Medicine",
+        "division": "Division of Oncology",
+        "specialtyAreas": ["Bone Marrow Transplant", "Leukemia", "Hematologic Malignancies"],
+        "medicalDegree": " American University of Beirut School of Medicine, Beirut, Lebanon 1974",
+        "location": "748 Spring Street, HUDSON, Indiana",
+        "image": "/static/doctor_imgs/1.png"
+    },
+    {
+        "id": 2,
+        "name": "Codi Kochan",
+        "academicRanking": "Associate Professor, Medicine",
+        "division": "Division of Medical Oncology",
+        "specialtyAreas": ["Medical Oncology", "Breast Oncology"],
+        "medicalDegree": "University of Ibadan College of Medicine, Ibadan, Nigeria 1999",
+        "location": "2034 Commerce Boulevard, ARBUCKLE, California",
+        "image": "/static/doctor_imgs/2.png"
+    },
+    {
+        "id": 3,
+        "name": "Erlinda Lindauer",
+        "academicRanking": "Professor, Neurology",
+        "division": "Division of Adult Neurology",
+        "specialtyAreas": ["Neuromuscular Disease", "Neurology - Adult", "Nerve Disorders", "Muscle Disorders"],
+        "medicalDegree": "King Edward Medical College, Lahore, Pakistan 1980",
+        "location": "245 Comfort Court, Dodgeville, Wisconsin",
+        "image": "/static/doctor_imgs/3.png"
+    },
+    {
+        "id": 4,
+        "name": "Maurice Elliott",
+        "academicRanking": "Professor, Surgery",
+        "division": "Division of General Surgery",
+        "specialtyAreas": ["Breast Oncology", "Oncologic Surgery", "Sarcoma", "Melanoma"],
+        "medicalDegree": "Washington University School of Medicine, St. Louis, MO 1992",
+        "location": "4379 American Drive, Tallahassee, Florida",
+        "image": "/static/doctor_imgs/4.png"
+    },
+    {
+        "id": 5,
+        "name": "Curt Vantassell",
+        "academicRanking": "Associate Professor, Medicine",
+        "division": "Division of Oncology",
+        "specialtyAreas": ["Bone Marrow Transplant", "Leukemia", "Hematologic Malignancies"],
+        "medicalDegree": " American University of Beirut School of Medicine, Beirut, Lebanon 1974",
+        "location": "748 Spring Street, HUDSON, Indiana",
+        "image": "/static/doctor_imgs/5.png"
+    },
+    {
+        "id": 6,
+        "name": "Kelsey Hurtado",
+        "academicRanking": "Professor, Neurology",
+        "division": "Division of Adult Neurology",
+        "specialtyAreas": ["Neuromuscular Disease", "Neurology - Adult", "Muscular Dystrophy", "Electromyography"],
+        "medicalDegree": "King Edward Medical College, Lahore, Pakistan 1980",
+        "location": "1171 Wakefield Street, BOSTON, Massachusetts",
+        "image": "/static/doctor_imgs/6.png"
+    },
+    {
+        "id": 7,
+        "name": "Patsy Edwards",
+        "academicRanking": "Professor, Medicine",
+        "division": "Division of Dermatology",
+        "specialtyAreas": ["Dermatology", "Melanoma"],
+        "medicalDegree": "Northeastern Ohio Universities College of Medicine, Rootstown, Ohio 2001",
+        "location": "4525 Ruckman Road, Oklahoma City, Oklahoma",
+        "image": "/static/doctor_imgs/7.png"
+    },
+    {
+        "id": 8,
+        "name": "Peggy Baney",
+        "academicRanking": "Associate Professor, Pediatrics",
+        "division": "Division of Pediatric Endocrinology and Diabetes",
+        "specialtyAreas": ["Pediatric Endocrinology", "Pediatric Diabetes"],
+        "medicalDegree": "Universidad del Valle, Cali, Colombia 1997",
+        "location": "1481 South Street, Midland, Texas",
+        "image": "/static/doctor_imgs/8.png"
+    }
+]
