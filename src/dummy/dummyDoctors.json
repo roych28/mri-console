@@ -6,8 +6,12 @@
         "division": "Division of Oncology",
         "specialtyAreas": ["Bone Marrow Transplant", "Leukemia", "Hematologic Malignancies"],
         "medicalDegree": " American University of Beirut School of Medicine, Beirut, Lebanon 1974",
+        "clinicalInterests": ["Medical oncology", "Bone marrow transplant", "Lymphoma", "Leukemia"],
         "location": "748 Spring Street, HUDSON, Indiana",
-        "image": "/static/doctor_imgs/1.png"
+        "image": "/static/doctor_imgs/1.png",
+        "phone": "478-542-9813",
+        "fax": "595-510-4009",
+        "email": "alfon@edu.com"
     },
     {
         "id": 2,
@@ -16,8 +20,12 @@
         "division": "Division of Medical Oncology",
         "specialtyAreas": ["Medical Oncology", "Breast Oncology"],
         "medicalDegree": "University of Ibadan College of Medicine, Ibadan, Nigeria 1999",
+        "clinicalInterests": ["Medical oncology", "Breast cancer", "Breast oncology"],
         "location": "2034 Commerce Boulevard, ARBUCKLE, California",
-        "image": "/static/doctor_imgs/2.png"
+        "image": "/static/doctor_imgs/2.png",
+        "phone": "654-132-0990",
+        "fax": "148-944-5445",
+        "email": "codik@edu.com"
     },
     {
         "id": 3,
@@ -26,8 +34,19 @@
         "division": "Division of Adult Neurology",
         "specialtyAreas": ["Neuromuscular Disease", "Neurology - Adult", "Nerve Disorders", "Muscle Disorders"],
         "medicalDegree": "King Edward Medical College, Lahore, Pakistan 1980",
+        "clinicalInterests": [
+            "Peripheral neuropathies,",
+            "Clinical neuromuscular diseases",
+            "Myopathy",
+            "Neuromuscular disease",
+            "Nerve disorders",
+            "Muscle disorders"
+        ],
         "location": "245 Comfort Court, Dodgeville, Wisconsin",
-        "image": "/static/doctor_imgs/3.png"
+        "image": "/static/doctor_imgs/3.png",
+        "phone": "190-898-9123",
+        "fax": "434-878-7575",
+        "email": "erlin12@edu.com"
     },
     {
         "id": 4,
@@ -36,8 +55,12 @@
         "division": "Division of General Surgery",
         "specialtyAreas": ["Breast Oncology", "Oncologic Surgery", "Sarcoma", "Melanoma"],
         "medicalDegree": "Washington University School of Medicine, St. Louis, MO 1992",
+        "clinicalInterests": ["Breast disease", "Breast cancer", "General surgery", "Endocrine cancer", "Sarcoma"],
         "location": "4379 American Drive, Tallahassee, Florida",
-        "image": "/static/doctor_imgs/4.png"
+        "image": "/static/doctor_imgs/4.png",
+        "phone": "982-133-1389",
+        "fax": "156-565-4324",
+        "email": "maurice@edu.com"
     },
     {
         "id": 5,
@@ -46,8 +69,12 @@
         "division": "Division of Oncology",
         "specialtyAreas": ["Bone Marrow Transplant", "Leukemia", "Hematologic Malignancies"],
         "medicalDegree": " American University of Beirut School of Medicine, Beirut, Lebanon 1974",
+        "clinicalInterests": ["Medical oncology", "Bone marrow transplant", "Lymphoma", "Leukemia"],
         "location": "748 Spring Street, HUDSON, Indiana",
-        "image": "/static/doctor_imgs/5.png"
+        "image": "/static/doctor_imgs/5.png",
+        "phone": "298-242-1345",
+        "fax": "229-158-4338",
+        "email": "curt3@edu.com"
     },
     {
         "id": 6,
@@ -56,8 +83,18 @@
         "division": "Division of Adult Neurology",
         "specialtyAreas": ["Neuromuscular Disease", "Neurology - Adult", "Muscular Dystrophy", "Electromyography"],
         "medicalDegree": "King Edward Medical College, Lahore, Pakistan 1980",
+        "clinicalInterests": [
+            "Migraine headaches",
+            "General neurology",
+            "Parkinson's disease",
+            "Alzheimer's disease",
+            "Seizures"
+        ],
         "location": "1171 Wakefield Street, BOSTON, Massachusetts",
-        "image": "/static/doctor_imgs/6.png"
+        "image": "/static/doctor_imgs/6.png",
+        "phone": "135-254-8997",
+        "fax": "285-585-3484",
+        "email": "kelhur21@edu.com"
     },
     {
         "id": 7,
@@ -66,8 +103,19 @@
         "division": "Division of Dermatology",
         "specialtyAreas": ["Dermatology", "Melanoma"],
         "medicalDegree": "Northeastern Ohio Universities College of Medicine, Rootstown, Ohio 2001",
+        "clinicalInterests": [
+            "Dermatology",
+            "Psoriasis",
+            "Medical dermatology",
+            "Ermatologic therapeutics",
+            "Cutaneous lymphoma",
+            "Chemotherapy-induced skin reactions"
+        ],
         "location": "4525 Ruckman Road, Oklahoma City, Oklahoma",
-        "image": "/static/doctor_imgs/7.png"
+        "image": "/static/doctor_imgs/7.png",
+        "phone": "715-249-3875",
+        "fax": "432-555-4324",
+        "email": "pats241@edu.com"
     },
     {
         "id": 8,
@@ -76,7 +124,11 @@
         "division": "Division of Pediatric Endocrinology and Diabetes",
         "specialtyAreas": ["Pediatric Endocrinology", "Pediatric Diabetes"],
         "medicalDegree": "Universidad del Valle, Cali, Colombia 1997",
+        "clinicalInterests": ["Pediatric lung transplantation", "Pulmonary disease in children"],
         "location": "1481 South Street, Midland, Texas",
-        "image": "/static/doctor_imgs/8.png"
+        "image": "/static/doctor_imgs/8.png",
+        "phone": "246-838-1567",
+        "fax": "246-145-7898",
+        "email": "pegban@edu.com"
     }
 ]

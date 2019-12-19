@@ -1,11 +1,27 @@
 import React from 'react';
 
-import dummyDoctorsJson from 'dummy/dummyDoctors.json';
+import imagePlaceholder from '../../../assets/placeholder.svg';
 import './index.scss';
+
+const Placeholder = () => (
+    <div className='placeholder-wrapper'>
+        <div className='placeholder'>
+            <div className='placeholder-sprite-wrapper'>
+                <img src={imagePlaceholder} alt='placeholder' />
+            </div>
+            <div className='placeholder-label'>
+                <div className='placeholder-gradient' />
+                <div className='placeholder-label-1'>There are no second opinions right now</div>
+                <div className='placeholder-label-2'>Stay updated</div>
+            </div>
+        </div>
+    </div>
+);
 
 class DoctorsItem extends React.Component {
     render() {
         const {
+            id,
             name,
             academicRanking,
             division,
@@ -14,13 +30,14 @@ class DoctorsItem extends React.Component {
             location,
             image
         } = this.props.doctor;
+        const { history } = this.props;
         console.log(image);
-        // console.log(doctorImg);
+        console.log(this.props);
         return (
             <li className='doctor-wrapper'>
                 <div className='doctor'>
                     <div className='header'>
-                        <div className='logo-container'>
+                        <div className='logo-container' onClick={() => history.push(`/doctors/${id}`)}>
                             <div className='logo'>
                                 <img src={image} alt='Doctor Logo' />
                             </div>
@@ -44,7 +61,9 @@ class DoctorsItem extends React.Component {
                     <ul className='field specialities'>
                         <label className='field-name'>Specialty Areas:</label>
                         {specialtyAreas.map(specialty => (
-                            <li className='specialty'>&#9642; {specialty}</li>
+                            <li className='specialty' key={specialtyAreas.indexOf(specialty) + 1}>
+                                &#9642; {specialty}
+                            </li>
                         ))}
                     </ul>
                 </div>
@@ -54,23 +73,20 @@ class DoctorsItem extends React.Component {
 }
 
 class DoctorsList extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            doctorsArray: dummyDoctorsJson
-        };
-    }
-
     render() {
-        const { doctorsArray } = this.state;
-        return (
+        const { doctorsList, history } = this.props;
+        console.log(this.props);
+        return doctorsList && doctorsList.length ? (
             <div id='doctors-list'>
                 <ul>
-                    {doctorsArray.map(doctor => {
-                        return <DoctorsItem key={doctor.id} doctor={doctor} />;
+                    {doctorsList.map(doctor => {
+                        return <DoctorsItem key={doctor.id} doctor={doctor} history={history} />;
                     })}
                 </ul>
+            </div>
+        ) : (
+            <div id='doctors-list'>
+                <Placeholder />
             </div>
         );
     }

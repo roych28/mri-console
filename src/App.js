@@ -5,6 +5,7 @@ import store from './store';
 import Home from './components/home';
 import Analysis from './components/analysis';
 import DoctorsPage from './components/doctors-page';
+import DoctorDetailsPage from './components/doctor';
 
 import './App.scss';
 
@@ -16,6 +17,7 @@ function App() {
                     <Route path='/' exact component={Home} />
                     <Route path='/analysis' exact component={Analysis} />
                     <Route path='/doctors' exact component={DoctorsPage} />
+                    <Route path='/doctors/:id' exact component={DoctorDetailsPage} />
                 </div>
             </Router>
         </Provider>

@@ -6,15 +6,76 @@ $thumb-size: 310px;
 #doctors-list {
     display: flex;
     flex: 1;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     overflow: hidden;
-    padding: 0 0 0 20px;
+
+    .placeholder-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: center;
+        padding: $item-padding/2;
+        flex: 1;
+
+        .placeholder {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+
+            .placeholder-sprite-wrapper {
+                flex-direction: column;
+                align-items: center;
+                display: flex;
+
+                img {
+                    width: 104px;
+                    margin-bottom: 4px;
+                }
+            }
+
+            .placeholder-label {
+                // height: 142px;
+                width: 480px;
+                overflow: hidden;
+                position: relative;
+
+                .placeholder-gradient {
+                    opacity: 0.4;
+                    position: absolute;
+                    height: 142px;
+                    width: 480px;
+                    transform: rotate(-180deg);
+                    opacity: 0.4;
+                }
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .placeholder-label-1 {
+                    color: white;
+                    font-size: 20px;
+                }
+
+                .placeholder-label-2 {
+                    color: white;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 
     & > ul {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: stretch;
+        justify-content: center;
         padding: $item-padding/2;
         flex: 1;
 
@@ -35,7 +96,7 @@ $thumb-size: 310px;
                 transition-timing-function: ease-in;
                 width: $thumb-size;
                 box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-                // padding-top: 26px;
+
                 padding-bottom: 17px;
                 display: flex;
                 height: 420px;
@@ -62,6 +123,7 @@ $thumb-size: 310px;
                         justify-content: center;
                         width: 100%;
                         height: 120px;
+                        cursor: pointer;
 
                         & > .logo {
                             & > img {
