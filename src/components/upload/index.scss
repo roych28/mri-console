@@ -113,6 +113,16 @@
             }
         }
 
+        & > .body-tab-3 {
+            display: flex;
+            height: 100%;
+            align-items: center;
+
+            & > p {
+                font-size: 32px;
+            }
+        }
+
         & > .footer {
             font-size: 10px;
             width: 65%;

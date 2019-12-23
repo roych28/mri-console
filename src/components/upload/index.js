@@ -132,7 +132,7 @@ class Upload extends Component {
                             </p>
                         )}
                     </div>
-                    <div className='body-tab-3' style={{ display: tab === 3 ? 'block' : 'none' }}>
+                    <div className='body-tab-3' style={{ display: tab === 3 ? 'flex' : 'none' }}>
                         <p>{reportText}</p>
                     </div>
                     <p className='footer'>
