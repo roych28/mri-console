@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 // import { ReactComponent as fileSvg } from '../../theme/icons/icon_file.svg';
 import './index.scss';
 import MyDropzone from '../utils/dropzone';
+import DwvComponent from './dicom-viewer';
 
 class Upload extends Component {
     constructor(props) {
@@ -12,10 +13,11 @@ class Upload extends Component {
         this.state = {
             uploadingStatus: 1,
             uploadPercentage: 70,
-            tab: 1,
+            tab: 2,
             files: [],
             txtFile: null,
-            reportText: 'No report yet'
+            reportText: 'No report yet',
+            dicomLoaded: false
         };
 
         this.setFiles = this.setFiles.bind(this);
@@ -74,15 +76,15 @@ class Upload extends Component {
     }
 
     render() {
-        const { uploadingStatus, uploadPercentage, tab, reportText } = this.state;
+        const { uploadingStatus, uploadPercentage, tab, reportText, dicomLoaded } = this.state;
         console.log('Tab: ', tab);
         console.log('Report Text:', reportText);
         return (
             <div className='upload-container'>
                 <div className='tabs'>
-                    <p className={`tab ${tab === 1 ? 'active' : ''}`} onClick={() => this.setState({ tab: 1 })}>
+                    {/*<p className={`tab ${tab === 1 ? 'active' : ''}`} onClick={() => this.setState({ tab: 1 })}>
                         FILE
-                    </p>
+        </p>*/}
                     <p
                         className={`tab ${tab === 2 ? 'active' : ''}`}
                         disabled={uploadingStatus !== 2}
@@ -99,24 +101,40 @@ class Upload extends Component {
                     </p>
                 </div>
                 <div className='upload-container-body'>
-                    {tab === 1 ? (
-                        <div className='body-tab-1'>
-                            <div className='fa fa-file-o fa-3x img' />
-                            {uploadingStatus === 1 ? (
-                                <MyDropzone className='dropzone' setFiles={this.setFiles} />
-                            ) : uploadingStatus === 2 ? (
-                                <p className='upload-btn' onClick={this.onConfirmUpload}>
-                                    Confirm Upload
-                                </p>
-                            ) : (
-                                <p className='upload-btn filled'>Uploading {uploadPercentage}%</p>
-                            )}
-                        </div>
-                    ) : (
-                        <div className='body-tab-2'>
-                            <p>{reportText}</p>
-                        </div>
-                    )}
+                    {/*<div className='body-tab-1' style={{ display: tab === 1 ? 'block' : 'none' }}>
+                        <div className='fa fa-file-o fa-3x img' />
+                        {uploadingStatus === 1 ? (
+                            <MyDropzone className='dropzone' setFiles={this.setFiles} />
+                        ) : uploadingStatus === 2 ? (
+                            <p className='upload-btn' onClick={this.onConfirmUpload}>
+                                Confirm Upload
+                            </p>
+                        ) : (
+                            <p className='upload-btn filled'>Uploading {uploadPercentage}%</p>
+                        )}
+                        </div>*/}
+                    <div className='body-tab-2' style={{ display: tab === 2 ? 'flex' : 'none' }}>
+                        <DwvComponent onDicomLoad={() => this.setState({ uploadingStatus: 2 })} />
+                        {uploadingStatus === 2 ? (
+                            <p
+                                className='upload-btn'
+                                onClick={this.onConfirmUpload}
+                                style={{ display: uploadingStatus === 2 ? '' : 'none' }}
+                            >
+                                Confirm DICOM
+                            </p>
+                        ) : (
+                            <p
+                                className='upload-btn filled'
+                                style={{ display: uploadingStatus === 3 ? '' : 'none' }}
+                            >
+                                Analyzing {uploadPercentage}%
+                            </p>
+                        )}
+                    </div>
+                    <div className='body-tab-3' style={{ display: tab === 3 ? 'block' : 'none' }}>
+                        <p>{reportText}</p>
+                    </div>
                     <p className='footer'>
                         By submitting your file to CT-Total you are asking CT-Total to share your submission with
                         the security community and agree to our Terms of Service and Privacy Policy.

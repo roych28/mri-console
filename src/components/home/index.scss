@@ -11,7 +11,7 @@
     & > .title-container {
         display: flex;
         flex-direction: column;
-        margin: 30px 0;
+        margin: 20px 0;
         max-width: 410px;
 
         & .title-with-img {
@@ -32,7 +32,7 @@
         }
 
         & > .description {
-            margin-top: 20px;
+            margin-top: 12px;
             font-size: 13px;
             color: #333;
             line-height: 1.8em;
@@ -41,7 +41,7 @@
 }
 
 .card {
-    height: 430px;
+    height: 500px;
     background-color: #fdfdfd;
     width: 70%;
     display: flex;
@@ -49,4 +49,5 @@
     justify-content: center;
     box-sizing: border-box;
     border: 1px solid #f9f9f9;
+    overflow: hidden;
 }

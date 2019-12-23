@@ -114,31 +114,33 @@
                 width: 100%;
                 background-color: #f9f9f9;
                 align-items: center;
+                justify-content: space-between;
 
-                & > .fa-check-circle-o {
-                    font-size: 22px;
-                    margin-left: 20px;
-                    color: #22b573;
-                    font-weight: lighter;
-                    -webkit-text-stroke: 1px white;
-                }
+                & > .one-side {
+                    & > .fa-check-circle-o {
+                        font-size: 22px;
+                        margin-left: 20px;
+                        color: #22b573;
+                        font-weight: lighter;
+                        -webkit-text-stroke: 1px white;
+                    }
 
-                & > label {
-                    color: #22b573;
-                    padding-left: 10px;
-                    font-weight: 600;
-                    font-size: 13px;
+                    & > label {
+                        color: #22b573;
+                        padding-left: 10px;
+                        font-weight: 600;
+                        font-size: 13px;
+                    }
                 }
 
                 & > .second-opinion-redirect {
                     cursor: pointer;
-                    position: absolute;
-                    right: 120px;
                     border-radius: 20px;
                     height: 26px;
                     box-shadow: 0px 0px 1px rgb(172, 172, 172);
                     font-size: 14px;
                     width: 140px;
+                    margin-right: 30px;
 
                     &:hover {
                         background-color: #727272;
