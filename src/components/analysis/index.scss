@@ -8,6 +8,7 @@
         line-height: 20px;
         font-weight: 450;
         font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 0;
         &.weak {
             opacity: 0.7;
         }
@@ -19,6 +20,7 @@
             font-size: 10px;
             background-color: #e6e6e6;
             border-radius: 14px;
+            text-align: center;
         }
     }
     .top-container {
@@ -31,11 +33,11 @@
             flex-direction: column;
 
             .spin-img {
-                padding: 20px 20px 20px 20px;
+                padding: 16px 16px 16px 16px;
                 color: #22b573;
                 opacity: 0.9;
                 font-size: 110px;
-                -webkit-text-stroke: 5px white;
+                -webkit-text-stroke: 8px white;
             }
 
             .grey-img {
@@ -47,7 +49,7 @@
                 & > .lines {
                     display: flex;
                     flex-direction: row;
-                    width: 80%;
+                    width: 90%;
                     justify-content: center;
                     height: 2px;
                     margin: 0 auto;
@@ -69,7 +71,7 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    padding: 0 25px;
+                    padding: 0 16px;
                     margin-top: 2px;
 
                     & > label.community-scr {
@@ -82,8 +84,8 @@
 
             label.threats {
                 position: absolute;
-                top: 56px;
-                left: 83px;
+                top: 54px;
+                left: 63px;
                 font-size: 30px;
                 font-weight: 500;
                 opacity: 1;
@@ -93,8 +95,8 @@
 
             label.total {
                 position: absolute;
-                top: 82px;
-                left: 80px;
+                top: 80px;
+                left: 60px;
                 font-size: 13px;
                 opacity: 0.3;
                 font-family: Arial, Helvetica, sans-serif;
@@ -117,6 +119,9 @@
                 justify-content: space-between;
 
                 & > .one-side {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     & > .fa-check-circle-o {
                         font-size: 22px;
                         margin-left: 20px;
@@ -184,6 +189,10 @@
                     justify-content: center;
                     margin-left: 170px;
                     border-left: 1px solid rgba(61, 61, 61, 0.1);
+
+                    & > label {
+                        margin-bottom: 0;
+                    }
                 }
 
                 & > .date-uploaded {
@@ -242,11 +251,12 @@
                         border-left: 0px;
                     }
 
-                    & > p {
+                    & > label.app-name {
                         width: 400px;
                         font-size: 14px;
                         color: #4d4d4d;
                         text-align: left;
+                        margin: 10px 0;
                     }
 
                     .fa-check-circle-o {

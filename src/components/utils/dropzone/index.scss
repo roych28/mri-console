@@ -4,8 +4,12 @@
     padding: 0px 12px;
     outline: none;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     p.drop-instruction {
         font-size: 18px;
+        padding: 10px;
     }
 }

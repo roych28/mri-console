@@ -184,9 +184,9 @@ class Analysis extends Component {
                                 {firstAppsArr.map(app => {
                                     return (
                                         <div key={app.id} className='table-row not-bordered-right'>
-                                            <p>{app.applicationName}</p>
+                                            <label className='app-name'>{app.applicationName}</label>
                                             <li className={this.getAppClassNameAndLabel(app, 'class')}></li>
-                                            <label style={{ paddingLeft: '8px' }}>
+                                            <label style={{ paddingLeft: '8px', marginBottom: '0px' }}>
                                                 {this.getAppClassNameAndLabel(app, 'label')}
                                             </label>
                                         </div>
@@ -197,7 +197,7 @@ class Analysis extends Component {
                                 {secondAppsArr.map(app => {
                                     return (
                                         <div key={app.id} className='table-row not-bordered-left'>
-                                            <p>{app.applicationName}</p>
+                                            <label className='app-name'>{app.applicationName}</label>
                                             <li
                                                 className={`${
                                                     secondAppsArr.indexOf(app) === secondAppsArr.length - 1 &&
@@ -208,7 +208,7 @@ class Analysis extends Component {
                                                         : 'fa fa-times-circle-o'
                                                 }`}
                                             ></li>
-                                            <label style={{ paddingLeft: '8px' }}>
+                                            <label style={{ paddingLeft: '8px', marginBottom: '0px' }}>
                                                 {secondAppsArr.indexOf(app) === secondAppsArr.length - 1 &&
                                                 applications.indexOf(app) !== applications.length - 1
                                                     ? 'Calculating..'
@@ -227,13 +227,13 @@ class Analysis extends Component {
                                 {applications.map(app => {
                                     return (
                                         <div key={app.id} className='table-row'>
-                                            <p>{app.applicationName}</p>
+                                            <label className='app-name'>{app.applicationName}</label>
                                             <li
                                                 className={`${
                                                     !app.detected ? 'fa fa-check-circle-o' : 'fa fa-times-circle-o'
                                                 }`}
                                             ></li>
-                                            <label style={{ paddingLeft: '8px' }}>
+                                            <label style={{ paddingLeft: '8px', marginBottom: '0px' }}>
                                                 {app.detected === false ? 'Undetected' : 'Detected'}
                                             </label>
                                         </div>

@@ -25,6 +25,13 @@ header {
 
     a {
         height: 100%;
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+            color: white;
+            text-decoration: none;
+        }
     }
 
     nav.title {
@@ -35,6 +42,7 @@ header {
             line-height: 20px;
             color: rgb(253, 253, 253);
             padding: $padding-item;
+            width: 100%;
         }
     }
 
@@ -43,10 +51,16 @@ header {
         flex-wrap: wrap;
         align-items: stretch;
         flex-direction: row;
+        // margin-bottom: 0px !important;
 
         &.breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
             flex: 1;
             width: 128px;
+            background-color: transparent;
+            margin-bottom: 0px;
+            padding: 0;
         }
     }
 
@@ -57,7 +71,6 @@ header {
         transition-timing-function: ease-in, ease-in;
         padding: $padding-item;
         text-decoration: none;
-        display: block;
         font-size: 16px;
         color: rgba(255, 255, 255, 0.85);
         cursor: pointer;

@@ -33,7 +33,7 @@ class DoctorDetailsPage extends React.Component {
                     <div id='block-body' className='page-block'>
                         <div className='page-block-content'>
                             <div className='column content'>
-                                <div className='header'>
+                                <div className='doctor-header'>
                                     <div className='title-wrapper'>
                                         <div className='title'>{name}</div>
                                         <div className='vendor'>{academicRanking}</div>

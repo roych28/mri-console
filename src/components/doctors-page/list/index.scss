@@ -139,8 +139,10 @@ $thumb-size: 310px;
                     flex-direction: column;
                     flex-wrap: wrap;
                     flex: 1;
+                    line-height: 1.1em;
                     & > .field-name {
                         font-weight: bold;
+                        margin: 0;
                     }
 
                     &.specialities {
