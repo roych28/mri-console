@@ -1,6 +1,7 @@
 .analysis-body {
     display: flex;
     flex-direction: column;
+    margin: 0 90px;
 
     label {
         color: #4d4d4d;
@@ -31,12 +32,13 @@
         .spinner-container {
             display: flex;
             flex-direction: column;
+            margin-right: 10px;
 
             .spin-img {
                 padding: 16px 16px 16px 16px;
                 color: #22b573;
                 opacity: 0.9;
-                font-size: 110px;
+                font-size: 120px;
                 -webkit-text-stroke: 8px white;
             }
 
@@ -67,6 +69,11 @@
                     }
                 }
 
+                & > .fa-question-circle {
+                    display: flex;
+                    justify-content: center;
+                }
+
                 & > .under-the-line {
                     display: flex;
                     flex-direction: row;
@@ -84,8 +91,8 @@
 
             label.threats {
                 position: absolute;
-                top: 54px;
-                left: 63px;
+                top: 56px;
+                left: 160px;
                 font-size: 30px;
                 font-weight: 500;
                 opacity: 1;
@@ -95,8 +102,8 @@
 
             label.total {
                 position: absolute;
-                top: 80px;
-                left: 60px;
+                top: 84px;
+                left: 156px;
                 font-size: 13px;
                 opacity: 0.3;
                 font-family: Arial, Helvetica, sans-serif;
@@ -107,8 +114,8 @@
             display: flex;
             flex-direction: column;
             border: 1px solid rgba(187, 187, 187, 0.1);
-            margin: 26px 0 0 0;
-            min-width: 80%;
+            margin: 26px 0 0 0px;
+            width: 90%;
 
             & > .desc-header {
                 display: flex;
@@ -164,8 +171,8 @@
                 & > .column {
                     display: flex;
                     flex-direction: column;
-                    padding-left: 25px;
-                    margin-right: 60px;
+
+                    padding-left: 20px;
                     border-left: 1px solid rgba(61, 61, 61, 0.1);
                     align-items: flex-start;
                 }
@@ -187,7 +194,9 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    margin-left: 170px;
+                    align-items: center;
+                    margin: 0 20px 0 150px;
+                    min-width: 90px;
                     border-left: 1px solid rgba(61, 61, 61, 0.1);
 
                     & > label {
@@ -196,13 +205,17 @@
                 }
 
                 & > .date-uploaded {
-                    padding-right: 30px;
+                    padding-right: 20px;
+                    margin-right: 40px;
+                    min-width: 210px;
                     border-right: 1px solid rgba(61, 61, 61, 0.1);
+                    align-items: center;
                 }
+
                 & > .file-type {
                     display: flex;
                     align-items: center;
-                    padding-left: 70px;
+                    // padding-left: 10px;
                     border-radius: 60px;
                     box-shadow: 0px 0px 1px rgb(172, 172, 172);
                     padding: 0.5em 1em;
@@ -224,8 +237,8 @@
     .apps-list {
         display: flex;
         flex-direction: column;
-        width: 90%;
-        padding: 40px 60px;
+        width: 100%;
+        padding: 30px 0;
 
         .table-container {
             display: flex;
@@ -240,6 +253,7 @@
                     display: flex;
                     flex-direction: row;
                     align-items: center;
+                    // justify-content: space-evenly;
                     padding-left: 38px;
                     border: 0.8px solid rgba(158, 158, 158, 0.1);
 
@@ -257,6 +271,12 @@
                         color: #4d4d4d;
                         text-align: left;
                         margin: 10px 0;
+                        cursor: pointer;
+                    }
+
+                    & > label.detected-label {
+                        padding-left: 10px;
+                        margin-bottom: 0px;
                     }
 
                     .fa-check-circle-o {

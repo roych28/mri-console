@@ -6,6 +6,9 @@
     & > #page-doctor-body {
         display: flex;
         flex: 1;
+        max-width: 1200px;
+        margin: auto;
+
         #block-body {
             display: flex;
             flex: 1;

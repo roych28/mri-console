@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+import { setAppsAsScanned } from 'actions/products';
 import './index.scss';
 
 class Analysis extends Component {
@@ -17,21 +19,24 @@ class Analysis extends Component {
 
         // this.scanThreats = this.scanThreats.bind(this);
         this.randomizeIsDetected = this.randomizeIsDetected.bind(this);
+        this.decideIsDetected = this.decideIsDetected.bind(this);
         this.loadApps = this.loadApps.bind(this);
         this.getAppClassNameAndLabel = this.getAppClassNameAndLabel.bind(this);
     }
 
     componentDidMount() {
         console.log('Analysis DidMount, Applications:', this.props.applications);
+        const { setAppsAsScanned } = this.props;
         // this.scanThreats();
         this.props.applications.sort((a, b) => a.applicationName.localeCompare(b.applicationName));
-        this.props.applications.forEach(app => this.randomizeIsDetected(app));
+        this.props.applications.forEach(app => this.decideIsDetected(app));
         this.loadApps();
     }
 
     loadApps() {
+        const { ready, applications, setAppsAsScanned } = this.props;
         let counter = 0;
-        const { applications } = this.props;
+        const intervalTime = ready ? 0 : 800;
         const interval = setInterval(() => {
             if (counter < applications.length / 2) {
                 this.setState({ firstAppsArr: [...this.state.firstAppsArr, applications[counter]] });
@@ -40,9 +45,10 @@ class Analysis extends Component {
             } else {
                 clearInterval(interval);
                 this.setState({ scanning: false });
+                setAppsAsScanned();
             }
             counter++;
-        }, 800);
+        }, intervalTime);
         // interval();
 
         // const firstAppsArr = this.props.applications.slice(0, this.props.applications.length / 2 + 1);
@@ -68,6 +74,16 @@ class Analysis extends Component {
     randomizeIsDetected(app) {
         app.detected = Math.random() * 100 < 90 ? false : true;
         return app.detected;
+    }
+
+    decideIsDetected(app) {
+        if (
+            app.applicationName === 'Heartbeat Calcium Scoring' ||
+            app.applicationName === 'CT Lung Nodule Assessment (LNA)' ||
+            app.applicationName === 'MR Liver Health'
+        )
+            app.detected = true;
+        else app.detected = false;
     }
 
     getAppClassNameAndLabel(app, type) {
@@ -108,8 +124,8 @@ class Analysis extends Component {
 
     render() {
         const { threats, totalAmmount, scanning, firstAppsArr, secondAppsArr } = this.state;
-        const { applications, history } = this.props;
-        console.log(applications.length / 2);
+        const { ready: haveAlreadyScanned, applications, history } = this.props;
+        console.log('Have apps already scanned before:', haveAlreadyScanned);
         return (
             <div className='analysis-body'>
                 <div className='top-container'>
@@ -184,9 +200,16 @@ class Analysis extends Component {
                                 {firstAppsArr.map(app => {
                                     return (
                                         <div key={app.id} className='table-row not-bordered-right'>
-                                            <label className='app-name'>{app.applicationName}</label>
+                                            <label
+                                                className='app-name'
+                                                onClick={() =>
+                                                    history.push(`/applications/${app.applicationName}`)
+                                                }
+                                            >
+                                                {app.applicationName}
+                                            </label>
                                             <li className={this.getAppClassNameAndLabel(app, 'class')}></li>
-                                            <label style={{ paddingLeft: '8px', marginBottom: '0px' }}>
+                                            <label className='detected-label'>
                                                 {this.getAppClassNameAndLabel(app, 'label')}
                                             </label>
                                         </div>
@@ -197,7 +220,14 @@ class Analysis extends Component {
                                 {secondAppsArr.map(app => {
                                     return (
                                         <div key={app.id} className='table-row not-bordered-left'>
-                                            <label className='app-name'>{app.applicationName}</label>
+                                            <label
+                                                className='app-name'
+                                                onClick={() =>
+                                                    history.push(`/applications/${app.applicationName}`)
+                                                }
+                                            >
+                                                {app.applicationName}
+                                            </label>
                                             <li
                                                 className={`${
                                                     secondAppsArr.indexOf(app) === secondAppsArr.length - 1 &&
@@ -208,7 +238,7 @@ class Analysis extends Component {
                                                         : 'fa fa-times-circle-o'
                                                 }`}
                                             ></li>
-                                            <label style={{ paddingLeft: '8px', marginBottom: '0px' }}>
+                                            <label className='detected-label'>
                                                 {secondAppsArr.indexOf(app) === secondAppsArr.length - 1 &&
                                                 applications.indexOf(app) !== applications.length - 1
                                                     ? 'Calculating..'
@@ -227,13 +257,20 @@ class Analysis extends Component {
                                 {applications.map(app => {
                                     return (
                                         <div key={app.id} className='table-row'>
-                                            <label className='app-name'>{app.applicationName}</label>
+                                            <label
+                                                className='app-name'
+                                                onClick={() =>
+                                                    history.push(`/applications/${app.applicationName}`)
+                                                }
+                                            >
+                                                {app.applicationName}
+                                            </label>
                                             <li
                                                 className={`${
                                                     !app.detected ? 'fa fa-check-circle-o' : 'fa fa-times-circle-o'
                                                 }`}
                                             ></li>
-                                            <label style={{ paddingLeft: '8px', marginBottom: '0px' }}>
+                                            <label className='detected-label'>
                                                 {app.detected === false ? 'Undetected' : 'Detected'}
                                             </label>
                                         </div>
@@ -248,8 +285,9 @@ class Analysis extends Component {
     }
 }
 
-const mapStateToProps = ({ products: { applications } }) => ({
+const mapStateToProps = ({ products: { ready, applications } }) => ({
+    ready,
     applications
 });
 
-export default connect(mapStateToProps)(Analysis);
+export default connect(mapStateToProps, { setAppsAsScanned })(Analysis);

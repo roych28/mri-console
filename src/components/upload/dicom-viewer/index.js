@@ -61,7 +61,7 @@ class DwvComponent extends React.Component {
                 dwv: dwv.getVersion(),
                 react: React.version
             },
-            tools: ['Scroll', 'ZoomAndPan', 'WindowLevel', 'Draw'],
+            tools: ['Scroll', 'WindowLevel', 'ZoomAndPan', 'Draw'],
             selectedTool: 'Select Tool',
             loadProgress: 0,
             dataLoaded: false,
@@ -96,7 +96,7 @@ class DwvComponent extends React.Component {
                         size='medium'
                     >
                         {this.state.selectedTool}
-                        <ArrowDropDownIcon className={classes.iconSmall} />
+                        <ArrowDownIcon className={classes.iconSmall} />
                     </Button>
                     <Menu
                         id='simple-menu'
@@ -185,6 +185,8 @@ class DwvComponent extends React.Component {
             self.setState({ selectedTool: 'Scroll' });
             // }
             self.props.onDicomLoad();
+            const dwvElement = document.getElementById('dwv');
+            dwvElement.scrollIntoView(true);
         });
         console.log(app);
         // store

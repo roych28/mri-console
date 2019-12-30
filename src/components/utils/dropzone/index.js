@@ -31,9 +31,11 @@ function MyDropzone(props) {
         <div {...getRootProps()} className='dropzone-container'>
             <input {...getInputProps()} type='file' directory='' webkitdirectory='' multiple={false} />
             {isDragActive ? (
-                <p className='drop-instruction'>Drop the pdf file here ...</p>
+                <label className='drop-instruction'>Drop the pdf file here ...</label>
             ) : (
-                <p className='drop-instruction'>Drag 'n' drop a PDF file here, or click to select a file</p>
+                <label className='drop-instruction'>
+                    Drag 'n' drop a PDF file here, or click to select a file
+                </label>
             )}
         </div>
     );
