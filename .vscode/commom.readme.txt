@@ -2,7 +2,6 @@ cd mri-console
 git pull
 rm -r build
 mkdir build
-cp -r ./temp/. ./build 
-rm -r temp
+cp -r ./temp1/. ./build 
 cd ../market-server
 npm run server-console
