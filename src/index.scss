@@ -1,3 +1,14 @@
+@font-face {
+    font-family: CentraleSans;
+    src: url('/static/fonts/CentraleSans-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: CentraleSans;
+    font-weight: bold;
+    src: url('/static/fonts/CentraleSans-Bold.otf') format('opentype');
+}
+
 html {
     height: 100%;
 }
@@ -40,6 +51,6 @@ label {
     margin: 0;
 }
 
-p {
-    margin: 0;
-}
+// p {
+//     margin: 0;
+// }

@@ -12,7 +12,7 @@ class Home extends Component {
                         <div className='fa fa-user-md fa-4x img'></div>
                         <div className='title'>CTTOTAL</div>
                     </div>
-                    <div className='description'>Analyze CT files to detect types of injuries &amp; diseases</div>
+                    <p className='description'>Analyze CT files to detect types of injuries &amp; diseases</p>
                 </div>
                 <div className='card'>
                     <Upload />

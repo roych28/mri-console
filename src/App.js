@@ -6,6 +6,7 @@ import Home from './components/home';
 import Analysis from './components/analysis';
 import DoctorsPage from './components/doctors-page';
 import DoctorDetailsPage from './components/doctor';
+import PageProduct from './components/product';
 
 import './App.scss';
 
@@ -18,6 +19,7 @@ function App() {
                     <Route path='/analysis' exact component={Analysis} />
                     <Route path='/doctors' exact component={DoctorsPage} />
                     <Route path='/doctors/:id' exact component={DoctorDetailsPage} />
+                    <Route path='/applications/:applicationName' exact component={PageProduct} />
                 </div>
             </Router>
         </Provider>
