@@ -1,4 +1,5 @@
-cd mri-console
+screen -R mri-console
+cd ../mri-console
 git pull
 rm -r build
 mkdir build
