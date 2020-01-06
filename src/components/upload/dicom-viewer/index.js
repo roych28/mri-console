@@ -185,8 +185,8 @@ class DwvComponent extends React.Component {
             self.setState({ selectedTool: 'Scroll' });
             // }
             self.props.onDicomLoad();
-            const dwvElement = document.getElementById('dwv');
-            dwvElement.scrollIntoView(true);
+            const uploadBoxElement = document.querySelector('.body-tab-2');
+            uploadBoxElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
         });
         console.log(app);
         // store
